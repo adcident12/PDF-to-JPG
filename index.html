@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no">
-<link rel="stylesheet" href="css/style.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="js/pdf.js"></script>
-<script src="js/pdf.worker.js"></script>
+  <title>PDF Convert JPG</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="js/pdf.js"></script>
+  <script src="js/pdf.worker.js"></script>
 </head>
-
 <body>
-
-<button id="load-button">Load PDF</button>
-
-<div id="pdf-main-container">
-	<div id="pdf-loader">
-		<div id="pdf-loading-bar"><div id="pdf-loading-completed"></div></div>
-	</div>
-	<div id="pdf-contents">
-		<div id="pdf-meta">
-			<div id="pdf-buttons">
-				<button id="pdf-prev">Previous</button>
-				<button id="pdf-next">Next</button>
-			</div>
-			<div id="page-count-container">Page <div id="pdf-current-page"></div> of <div id="pdf-total-pages"></div></div>
-		</div>
-		<canvas id="pdf-canvas" width="400"></canvas>
-		<div id="page-loader">Loading page ...</div>
-		<a id="download-image" href="#">Download JPG</a>
-	</div>
-</div>
+  <div class="container mt-5">
+    <div class="card text-center">
+      <div class="card-header">Featured</div>
+      <div class="card-body">
+        <h5 class="card-title">PDF Convert JPG</h5>
+        <p class="card-text"><h6 class="text-center">Credit</h6><a href="http://usefulangle.com/post/24/pdf-to-jpeg-png-with-pdfjs" target="_bank">How to Convert PDF to Image (JPEG / PNG) with Javascript using PDF.JS</a></p>
+        <button id="load-button" class="btn btn-info">Load PDF</button>
+        <div id="pdf-main-container">
+          <div id="pdf-loader">
+            <div id="pdf-loading-bar"><div id="pdf-loading-completed"></div></div>
+          </div>
+            <div id="pdf-contents">
+              <div id="pdf-meta">
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                      <button id="pdf-prev" class="btn btn-secondary">Previous</button>
+                      <button id="pdf-next" class="btn btn-secondary">Next</button>
+                  </div>
+                  <div id="page-count-container">Page <div id="pdf-current-page"></div> of <div id="pdf-total-pages"></div></div>
+                </div>
+              <canvas id="pdf-canvas" width="400"></canvas>
+              <div id="page-loader">Loading page ...</div>
+              <a id="download-image" href="#" class="btn btn-success">Download JPG</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
 <script>
 	var __PDF_DOC,
   __CURRENT_PAGE,

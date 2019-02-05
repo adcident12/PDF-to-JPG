@@ -33,7 +33,7 @@
 
 #pdf-meta {
   overflow: hidden;
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
 }
 
 #pdf-buttons {
@@ -41,7 +41,7 @@
 }
 
 #page-count-container {
-  float: right;
+  margin-top: 1rem;
 }
 
 #pdf-current-page {
@@ -54,6 +54,7 @@
 
 #pdf-canvas {
   border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -72,4 +73,9 @@
   margin: 20px auto 0 auto;
   font-size: 13px;
   text-align: center;
+}
+
+.box-left,
+.box-right {
+  display: inline-block;
 }
