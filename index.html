@@ -33,7 +33,7 @@
                   </div>
                   <div id="page-count-container">Page <div id="pdf-current-page"></div> of <div id="pdf-total-pages"></div></div>
                 </div>
-              <canvas id="pdf-canvas" width="400"></canvas>
+              <canvas id="pdf-canvas" width="1080" style="width: 100%;"></canvas>
               <div id="page-loader">Loading page ...</div>
               <a id="download-image" href="#" class="btn btn-success">Download JPG</a>
             </div>
@@ -128,14 +128,13 @@ function showPage(page_no) {
 //Custom get pdf file
 $("#load-button").on("click", function() {
   $.ajax({
-    url: "pdf/pdfurl-guide.pdf",
+    url: "pdf/thirty-days-of-vue-fullstackio.pdf",
     method: "GET",
     xhrFields: {
       responseType: "blob"
     },
     success: function(data) {
-      var url = window.URL.createObjectURL(data);
-      showPDF(url);
+      showPDF(URL.createObjectURL(data));
     }
   });
 });
