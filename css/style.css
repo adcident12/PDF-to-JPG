@@ -80,3 +80,17 @@
 .box-right {
   display: inline-block;
 }
+
+.box-input {
+  width: 100%;
+  margin: auto;
+}
+
+.form-group {
+  text-align: -webkit-center;
+}
+
+.form-control {
+  width: 20%;
+  text-align: center;
+}
