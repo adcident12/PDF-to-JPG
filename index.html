@@ -152,7 +152,7 @@ $("#pdf-next").on("click", function() {
 // Download button
 $("#download-image").on("click", function() {
   $(this)
-    .attr("href", __CANVAS.toDataURL())
+    .attr("href", __CANVAS.toDataURL("image/jpeg", 0.8))
     .attr("download", "page.jpg");
 });
 
