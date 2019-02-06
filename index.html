@@ -161,7 +161,6 @@ $("#pdf-next").on("click", function() {
 $('#search').keyup((e) =>{
   clearTimeout(timer);
     var PageNumber = Number(e.target.value);
-    console.log(PageNumber);
     var timer = setTimeout(() => {
     if(PageNumber !== '') {
       if(PageNumber === 0) {
