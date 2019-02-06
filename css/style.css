@@ -1,3 +1,7 @@
+body {
+  background: #333 url(http://php.net/images/bg-texture-00.svg);
+}
+
 #load-button {
   width: 150px;
   display: block;
