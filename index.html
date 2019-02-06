@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no">
   <link rel="shortcut icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Oxygen480-mimetypes-application-pdf.svg/1024px-Oxygen480-mimetypes-application-pdf.svg.png"/>
   <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="js/pdf.js"></script>
   <script src="js/pdf.worker.js"></script>
@@ -22,7 +22,8 @@
       <div class="card-body">
         <h5 class="card-title">PDF Convert JPG</h5>
         <p class="card-text"><h6 class="text-center">Credit</h6><a href="http://usefulangle.com/post/24/pdf-to-jpeg-png-with-pdfjs" target="_bank">How to Convert PDF to Image (JPEG / PNG) with Javascript using PDF.JS</a></p>
-        <button id="load-button" class="btn btn-info">Load PDF</button>
+        <button id="load-button" class="btn btn-info">Load PDF </button>
+        <span id="ajaxSpinnerContainer"><img src="image/ajax-loader.gif" id="ajaxSpinnerImage" title="working..." /></span>
         <div id="pdf-main-container">
           <div id="pdf-loader">
             <div id="pdf-loading-bar"><div id="pdf-loading-completed"></div></div>
@@ -134,6 +135,7 @@ function showPage(page_no) {
 
 //Custom get pdf file
 $("#load-button").on("click", function() {
+  $("#ajaxSpinnerImage").show();
   $.ajax({
     url: "pdf/thirty-days-of-vue-fullstackio.pdf",
     method: "GET",
@@ -141,6 +143,7 @@ $("#load-button").on("click", function() {
       responseType: "blob"
     },
     success: function(data) {
+      $("#ajaxSpinnerImage").hide();
       showPDF(URL.createObjectURL(data));
     }
   });

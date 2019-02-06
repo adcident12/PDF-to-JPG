@@ -2,6 +2,10 @@ body {
   background: #333 url(http://php.net/images/bg-texture-00.svg);
 }
 
+#ajaxSpinnerImage {
+  display: none;
+}
+
 #load-button {
   width: 150px;
   display: block;
